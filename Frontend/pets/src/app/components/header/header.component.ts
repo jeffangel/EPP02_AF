@@ -25,7 +25,7 @@ export class HeaderComponent {
   logout() {
     this.authService.logout_user().subscribe({
       next: () => {
-          localStorage.removeItem('session')
+          localStorage.removeItem('user_email')
           this.router.navigate(['/login'])
       },
       error: error => {

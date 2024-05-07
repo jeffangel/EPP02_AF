@@ -2,7 +2,7 @@
     "database" : {
         "file" : {
             "path" : "pets.assets.database",
-            "name" : "03eppy_proyecto_final.db"
+            "name" : "02eppy_proyecto_final.db"
         }
     },
     "imgbb": {

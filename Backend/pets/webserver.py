@@ -4,7 +4,6 @@ from flask import Flask
 
 from pets.controllers.auth import AuthController
 from pets.controllers.report import ReportController
-from pets.config import cfg_item, Config
 
 class Webserver():
 

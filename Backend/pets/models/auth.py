@@ -92,7 +92,6 @@ class AuthModel():
 
     def check_user_session(self,token):
         try:
-            #self.__enconded_token = (token[6::])
             self.__enconded_token = token
             self.__user_email = jwt.decode(self.__enconded_token, self.__secret, algorithms=[self.__encoded_algorithm])
             self.__message = self.__user_email.get('email')

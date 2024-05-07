@@ -1,4 +1,4 @@
-<div style="overflow-x:auto;">
+<!-- <div style="overflow-x:auto;">
 	<table>
 		<thead>
 			<tr>
@@ -9,13 +9,12 @@
                 <th>Ciudad</th>
                 <th>Calle</th>
 				<th>Caracteristica</th>
-				<th>Contacto</th>
+				<th>Contacto (Correo/Celular)</th>
                 <th>Imagen</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr *ngFor="let case of cases; let n = index">
-				<!-- <th>{{ n + 1 }}</th> -->
 				<td>{{case[3]}}</td>
                 <td>{{case[9].mascotas[0][1]}}</td>
                 <td>{{case[9].mascotas[0][2]}}</td>
@@ -24,26 +23,103 @@
                 <td>{{case[5]}}</td>
                 <td>{{case[9].mascotas[0][7].rasgos[0][2]}}</td>
                 <td>{{case[9].contacto[0]}} - {{case[9].contacto[1]}} </td>
-                <!-- <td>{{case[9].mascotas[0][7].imagenes[0][2]}}</td> -->
                 <td><a href={{case[9].mascotas[0][7].imagenes[0][2]}} target="_blank">View image</a></td>
-<!--  				<td *ngIf="index != n">{{instance.responsable}}
-					<br>
-					<button *ngIf="!updating" class="btn btn-default btn-sm" (click)="edit(n)">
-						<span class="glyphicon glyphicon-pencil"></span>
-					</button>
-				</td>
-				<td *ngIf="index == n">
-					<input type="text" placeholder="Nuevo responsable" class="p-2 w-full rounded-lg shadow-sm"
-						#responsable />
-					<button type="button" class="btn btn-default btn-sm" (click)="update(responsable.value,n)">
-						<span class="glyphicon glyphicon-ok"></span>
-					</button>
-					<button type="button" class="btn btn-default btn-sm" (click)="cancelar()">
-						<span class="glyphicon glyphicon-log-in"></span>
-					</button>
-				</td>
-				<td>{{instance.instanceid}}</td>
-			</tr> -->
 		</tbody>
 	</table>
+</div> -->
+
+<!-- <div class="container mt-3">
+<h2>Cards with Contextual Classes</h2>
+	<div class="container mt-5" *ngFor="let case of cases; let n = index" style="width: 50%">
+		<div class="card bg-light text-dark">
+	  		<div class="card-body">
+				{{case[9].mascotas[0][1]}} ({{case[9].mascotas[0][2]}}) - Extraviado el {{case[3]}}
+				<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+					  <div class="carousel-item active">
+						<img src={{case[9].mascotas[0][7].imagenes[0][2]}} class="d-block w-100">
+					  </div>
+					  <div class="carousel-item">
+						<img src="https://images.pexels.com/photos/214574/pexels-photo-214574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100">
+					  </div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+					  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					  <span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+					  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					  <span class="visually-hidden">Next</span>
+					</button>
+				  </div>
+			</div>
+		</div>
+  	</div>
+</div> -->
+
+
+<div class="container mt-3">
+	<div class="row mt-5" *ngFor="let case of cases; let n = index" style="height: auto; width: auto; align-content: center;">
+		<div class="col-sm card bg-light text-dark">
+			<div class="card-body" style="padding: 50% 0; text-align: center;">
+				<h3>{{case[9].mascotas[0][1]}} ({{case[9].mascotas[0][2]}} - {{case[9].mascotas[0][3]}})</h3>
+				<br>
+				<h4>Circunstancias:</h4>
+				<h4>Extraviado el {{case[3]}} en la {{case[5]}} de la ciudad de {{case[4]}}.</h4>
+				<br>
+				<h4>Características:</h4>
+				<h5>{{case[9].mascotas[0][7].rasgos[0][2]}}</h5>
+				<br>
+				<h4>Contacto:</h4>
+				<h5>{{case[9].contacto[0]}} - {{case[9].contacto[1]}}</h5>
+			</div>
+		</div>
+		<div class="col-sm">
+			<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src={{case[9].mascotas[0][7].imagenes[0][2]}} class="d-block w-100">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+					data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+					data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="container mt-5" *ngFor="let case of cases; let n = index" style="width: 50%">
+		<div class="card bg-light text-dark">
+			<div class="card-body">
+				{{case[9].mascotas[0][1]}} ({{case[9].mascotas[0][2]}}) - Extraviado el {{case[3]}}
+				<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src={{case[9].mascotas[0][7].imagenes[0][2]}} class="d-block w-100">
+						</div>
+						<div class="carousel-item">
+							<img src="https://images.pexels.com/photos/214574/pexels-photo-214574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+								class="d-block w-100">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+						data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+						data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div> -->
 </div>
